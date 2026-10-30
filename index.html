@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171310">
+  <title>NOIR — Glass Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="layout">
+    <section class="calculator glass-panel" aria-label="Calculator">
+      <header class="topbar">
+        <div class="identity">
+          <span class="brand-mark">N</span>
+          <div><span class="brand-name">NOIR</span><span class="brand-sub">PRECISION IN EVERY TAP</span></div>
+        </div>
+        <button class="theme-btn" id="themeBtn" aria-label="Switch theme" title="Switch theme"><span class="theme-icon">☼</span></button>
+      </header>
+
+      <div class="screen">
+        <div class="screen-label"><span>LIVE DISPLAY</span><span class="live-dot"></span></div>
+        <p class="expression" id="expression" aria-label="Expression"></p>
+        <p class="result" id="result" aria-live="polite">0</p>
+        <div class="screen-line"></div>
+      </div>
+
+      <div class="keypad" id="keypad">
+        <button class="key utility" data-action="clear">AC</button>
+        <button class="key utility" data-action="delete" aria-label="Delete">⌫</button>
+        <button class="key utility" data-action="percent">%</button>
+        <button class="key operator" data-action="operator" data-value="/">÷</button>
+
+        <button class="key" data-action="digit" data-value="7">7</button>
+        <button class="key" data-action="digit" data-value="8">8</button>
+        <button class="key" data-action="digit" data-value="9">9</button>
+        <button class="key operator" data-action="operator" data-value="*">×</button>
+
+        <button class="key" data-action="digit" data-value="4">4</button>
+        <button class="key" data-action="digit" data-value="5">5</button>
+        <button class="key" data-action="digit" data-value="6">6</button>
+        <button class="key operator" data-action="operator" data-value="-">−</button>
+
+        <button class="key" data-action="digit" data-value="1">1</button>
+        <button class="key" data-action="digit" data-value="2">2</button>
+        <button class="key" data-action="digit" data-value="3">3</button>
+        <button class="key operator" data-action="operator" data-value="+">+</button>
+
+        <button class="key utility" data-action="sign" aria-label="Change sign">±</button>
+        <button class="key zero" data-action="digit" data-value="0">0</button>
+        <button class="key" data-action="decimal">.</button>
+        <button class="key equals" data-action="equals">=</button>
+      </div>
+      <footer class="calc-footer"><span>DESIGNED TO FEEL EFFORTLESS</span><span>01 / 01</span></footer>
+    </section>
+
+    <aside class="history glass-panel">
+      <div class="history-heading"><div><span class="eyebrow">YOUR ACTIVITY</span><h2>History<span class="heading-dot">.</span></h2></div><span class="history-count" id="historyCount">00</span></div>
+      <div class="history-rule"></div>
+      <ul id="historyList" class="history-list"></ul>
+      <div class="history-bottom"><span>RECENT CALCULATIONS</span><button class="clear-history" id="clearHistory">CLEAR ALL ↗</button></div>
+    </aside>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>
